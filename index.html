@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="utf-8">
+	<title>Личный кабинет (Профиль)</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wght@8..144,300;8..144,400;8..144,500;8..144,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="sass/main.css">	
+</head>
+<body>
+	
+	
+	<div class="site-wrap">
+		<div class="page-profile">
+			<div class="container">
+				<h1 class="page-profile-title">Профиль</h1>
+				<div class="page-profile-wrapper">
+					<div class="page-profile-wrapper__forms">
+						<div class="page-profile-wrapper__forms-left">
+							<form class="page-profile-wrapper__forms-personal">
+								<div class="page-profile-wrapper__forms-personal--title">Ваша личная информация</div>
+									<div class="page-profile-wrapper__forms-personal--for">
+										<div class="page-profile-wrapper__forms-personal--fields">
+											<div class="page-profile-wrapper__forms-personal--control">
+												<input data-name data-clear type="text" class="page-profile-wrapper__forms-personal--field" required>
+												<label class="page-profile-wrapper__forms-personal--label">Имя</label>
+											</div>
+											<div class="page-profile-wrapper__forms-personal--control">
+												<input data-sur-name data-clear type="text" class="page-profile-wrapper__forms-personal--field" required>
+												<label class="page-profile-wrapper__forms-personal--label">Фамилия</label>
+											</div>
+											<div class="page-profile-wrapper__forms-personal--control">
+												<input data-second-name data-clear type="text" class="page-profile-wrapper__forms-personal--field" required>
+												<label class="page-profile-wrapper__forms-personal--label">Отчество</label>
+											</div>
+											<div class="page-profile-wrapper__forms-personal--control">
+												<input data-email data-clear type="text" class="page-profile-wrapper__forms-personal--field" required>
+												<label class="page-profile-wrapper__forms-personal--label">Email
+													<dfn class="hint-right page-profile-wrapper__forms-personal--hint" data-hint="В формате: test@mail.ru"></dfn>
+												</label>
+											</div>
+											<div class="page-profile-wrapper__forms-personal--control">
+												<input data-mobile data-clear id="phone" type="text" class="page-profile-wrapper__forms-personal--field" required>
+												<label class="page-profile-wrapper__forms-personal--label">Мобильный телефон</label>
+											</div>
+											<div class="page-profile-wrapper__forms-personal--control">
+												<input data-birth data-clear id="date" type="text" class="page-profile-wrapper__forms-personal--field" required>
+												<label class="page-profile-wrapper__forms-personal--label"><span>Дата рождения</span>
+													<dfn class="hint-right page-profile-wrapper__forms-personal--hint" data-hint="В формате: число, месяц, год"></dfn>
+												</label>
+											</div>
+										</div>
+										<div class="page-profile-wrapper__forms-personal--sex">
+											<div class="page-profile-wrapper__forms-personal--radio">
+												<input data-checked-man value="man" class="page-profile-wrapper__forms-personal--button" type="radio" name="radio" required>
+												<label class="page-profile-wrapper__forms-personal--text">Мужской</label>
+											</div>
+											<div class="page-profile-wrapper__forms-personal--radio">
+												<input data-checked-woman value="woman" class="page-profile-wrapper__forms-personal--button" type="radio" name="radio" required>
+												<label class="page-profile-wrapper__forms-personal--text">Женский</label>
+											</div>
+										</div>
+									</div>
+								<div class="page-profile-wrapper__forms-personal--buttons">
+									<button type="button" class="page-profile-wrapper__forms-personal--cancel">Отменить</button>
+									<button disabled type="submit" class="page-profile-wrapper__forms-personal--save">Сохранить изменения</button>
+								</div>
+							</form>
+						</div>
+						<div class="page-profile-wrapper__forms-right">
+							<div class="page-profile-wrapper__forms-security">
+								<div class="page-profile-wrapper__forms-security--title">Безопасность</div>
+								<div class="page-profile-wrapper__forms-security--change-password js-modal" data-modal="#modal_1">
+									<span>Изменить пароль</span>
+								</div>
+								<div id="modal_1" class="modal-window page-profile-wrapper__forms-security--modal">
+									<form class="page-profile-wrapper__forms-security--popup">
+										<div class="page-profile-wrapper__forms-security--ttl">Безопасность</div>
+										<div class="page-profile-wrapper__forms-security--ctrl">
+											<input data-clear-field class="page-profile-wrapper__forms-security--fld" id="currentPass" type="password" required>
+											<label class="page-profile-wrapper__forms-security--label">Ваш текущий пароль</label>
+											<span class="page-profile-wrapper__forms-security--eye"></span>
+										</div>
+										<div class="page-profile-wrapper__forms-security--ctrl">
+											<input data-clear-field class="page-profile-wrapper__forms-security--fld" id="newPass" type="password" required>
+											<label class="page-profile-wrapper__forms-security--label">Новый пароль</label>
+											<span class="page-profile-wrapper__forms-security--eye"></span>
+										</div>
+										<div class="page-profile-wrapper__forms-security--ctrl">
+											<input data-clear-field class="page-profile-wrapper__forms-security--fld" id="repeatPass" type="password" required>
+											<label class="page-profile-wrapper__forms-security--label">Повторите пароль, чтобы не ошибиться</label>
+											<span class="page-profile-wrapper__forms-security--eye"></span>
+											<i class="page-profile-wrapper__forms-security--error">Пароли не совпадают!</i>
+										</div>
+										<div class="page-profile-wrapper__forms-security--buttons">
+											<button type="button" class="page-profile-wrapper__forms-security--cencel modal-close">Отменить</button>
+											<button type="submit" class="page-profile-wrapper__forms-security--save buttonChange">Сохранить</button>
+										</div>
+										<div class="page-profile-wrapper__forms-security--cross modal-close">&times;</div>
+									</form>
+								  </div>
+								  <div class="page-profile-wrapper__forms-security--backdrop hidden" id="modal-backdrop"></div>
+							</div>
+							<form class="page-profile-wrapper__forms-notifications">
+								<div class="page-profile-wrapper__forms-notifications--title">Уведомления</div>
+								<div class="page-profile-wrapper__forms-notifications--accordeon">
+									<div class="page-profile-wrapper__forms-notifications--state">
+										<span class="page-profile-wrapper__forms-notifications--headline">О состоянии доставки</span>
+										<div class="page-profile-wrapper__forms-notifications--hide">
+											<div class="page-profile-wrapper__forms-notifications--checkboxes">
+												<label class="page-profile-wrapper__forms-notifications--text">Email</label>
+												<label class="page-profile-wrapper__forms-notifications--switch">
+													<input type="checkbox" class="page-profile-wrapper__forms-notifications--checkbox">
+													<span class="page-profile-wrapper__forms-notifications--slide"></span>
+												</label>
+											</div>
+											<div class="page-profile-wrapper__forms-notifications--checkboxes">
+												<label class="page-profile-wrapper__forms-notifications--text">SMS</label>
+												<label class="page-profile-wrapper__forms-notifications--switch">
+													<input type="checkbox" class="page-profile-wrapper__forms-notifications--checkbox">
+													<span class="page-profile-wrapper__forms-notifications--slide"></span>
+												</label>
+											</div>
+											<div class="page-profile-wrapper__forms-notifications--checkboxes">
+												<label class="page-profile-wrapper__forms-notifications--text">Push-уведомления ?</label>
+												<label class="page-profile-wrapper__forms-notifications--switch">
+													<input type="checkbox" class="page-profile-wrapper__forms-notifications--checkbox">
+													<span class="page-profile-wrapper__forms-notifications--slide"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="page-profile-wrapper__forms-notifications--state">
+										<span class="page-profile-wrapper__forms-notifications--headline">О скидках и новинках</span>
+										<div class="page-profile-wrapper__forms-notifications--hide">
+											<div class="page-profile-wrapper__forms-notifications--checkboxes">
+												<label class="page-profile-wrapper__forms-notifications--text">Email</label>
+												<label class="page-profile-wrapper__forms-notifications--switch">
+													<input type="checkbox" class="page-profile-wrapper__forms-notifications--checkbox">
+													<span class="page-profile-wrapper__forms-notifications--slide"></span>
+												</label>
+											</div>
+											<div class="page-profile-wrapper__forms-notifications--checkboxes">
+												<label class="page-profile-wrapper__forms-notifications--text">SMS</label>
+												<label class="page-profile-wrapper__forms-notifications--switch">
+													<input type="checkbox" class="page-profile-wrapper__forms-notifications--checkbox">
+													<span class="page-profile-wrapper__forms-notifications--slide"></span>
+												</label>
+											</div>
+											<div class="page-profile-wrapper__forms-notifications--checkboxes">
+												<label class="page-profile-wrapper__forms-notifications--text">Push-уведомления ?</label>
+												<label class="page-profile-wrapper__forms-notifications--switch">
+													<input type="checkbox" class="page-profile-wrapper__forms-notifications--checkbox">
+													<span class="page-profile-wrapper__forms-notifications--slide"></span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<script src="js/script.js"></script>
+
+	
+
+</body>
+</html>

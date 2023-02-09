@@ -1,0 +1,562 @@
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+*:before, *:after
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+
+body
+	min-width: 320px
+	position: relative
+	line-height: 1.4
+	font-weight: 400
+	overflow-x: hidden
+	margin: 0
+	height: 100vh
+	font-family: 'Roboto Serif', serif
+	
+p
+	margin: 0
+
+a
+	text-decoration: none
+	outline: none
+	display: inline-block
+	color: #000
+
+img
+	max-width: 100%
+	height: auto
+	vertical-align: bottom
+
+ul li,
+ol li
+	list-style: none
+	display: block
+	margin: 0
+
+span
+	display: inline-block
+
+ul, ol
+	display: block
+	margin: 0
+	padding-left: 0
+
+button
+	outline: none
+	border: 0
+	padding: 0
+	cursor: pointer
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	font-weight: normal
+
+strong
+	display: inline-block
+
+.site-wrap
+	overflow: hidden
+.container
+	margin: 0 auto
+	position: relative
+	padding: 0 15px
+	max-width: 1050px
+	width: 100%
+
+//ColorVariables
+$colorBg1: #FAFAFA
+$colorBg2: #fff
+$colorButton: #EFEFF0
+$colorError: #FF392E
+$colorFrame: #EBEBF0
+$colorSite: #0100D3
+$colorTxt: #C5C5C7
+$colorBlue: #2F80ED
+$colorDark: #7B828A
+$colorGreen: #30DB5B
+$colorBlack: #262626
+$colorOrange: #F15A2C
+
+
+
+.page-profile
+	padding-left: 40px
+	margin-top: 40px
+	&-title
+		font-size: 24px
+		font-weight: 500
+	&-wrapper
+		margin-top: 25px
+		&__forms
+			display: flex
+			justify-content: space-between
+			&-left
+				max-width: 500px
+				width: 100%
+			&-personal
+				border: 1px solid $colorFrame
+				border-radius: 10px
+				overflow: hidden
+				&--title
+					color: $colorDark
+					font-size: 16px
+					font-weight: 500
+					background-color: $colorBg1
+					padding: 15px 20px
+				&--fields
+					padding: 20px
+				&--control
+					position: relative
+					margin-bottom: 10px
+					&:last-child
+						margin-bottom: 0
+				&--field
+					outline: none
+					width: 100%
+					padding: 20px
+					border-radius: 10px
+					font-size: 16px
+					color: $colorBlack
+					border: 1px solid $colorFrame
+					&:focus + label,
+					&:valid + label
+						font-size: 12px 
+						color: #BFBFBF
+						top: 16px 
+						left: 10px 
+						background: $colorBg2 
+						padding-left: 10px
+					&:focus,
+					&:valid
+						padding: 30px 20px 10px 20px
+				&--label
+					transition: .3s
+					position: absolute
+					left: 20px
+					top: 50%
+					transform: translateY(-50%)
+					color: #BFBFBF
+					font-size: 16px
+				&--sex
+					display: flex 
+					justify-content: space-around 
+					align-items: center 
+					position: relative
+					background-color: #EBEBF0
+					margin: 0 20px 30px 20px
+					border-radius: 6px 
+					&::after
+						content: ''
+						display: block
+						position: absolute
+						left: 50%
+						height: 80%
+						width: 1px
+						background: $colorBg2
+				&--radio
+					flex: 1
+				&--button
+					appearance: none 
+					display: none 
+					&:checked
+						& + label
+							background-color: $colorBg2
+							border-color: #EBEBF0
+				&--text
+					font-size: 14px 
+					display: flex 
+					justify-content: center 
+					align-items: center 
+					text-align: center 
+					border-radius: 6px 
+					padding: 6px 0
+					overflow: hidden 
+					transition: linear 0.1s 
+					border: 2px solid transparent
+					color: $colorBlack
+					cursor: pointer
+				&--buttons
+					display: none
+					justify-content: flex-end
+					margin: 0 20px 20px 20px
+					animation: softness .3s linear
+					&.active
+						display: flex
+						animation: softness .3s linear
+				&--cancel,
+				&--save
+					padding: 15px 45px
+					border-radius: 10px
+				&--cancel
+					border: 1px solid $colorFrame
+					background-color: $colorBg2
+				&--save
+					margin-left: 20px
+					&.active
+						color: $colorBg2
+						background-color: $colorSite
+			&-right
+				margin-left: 20px
+				width: 100%
+			&-security
+				border: 1px solid $colorFrame
+				border-radius: 10px
+				color: $colorDark
+				margin-bottom: 20px
+				overflow: hidden
+				&--title
+					font-size: 16px
+					font-weight: 500
+					background-color: $colorBg1
+					padding: 15px 20px
+				&--change-password
+					position: relative
+					padding: 20px 0 15px 0
+					margin: 0 20px
+					font-size: 16px
+					margin-bottom: 25px
+					color: #C5C5C7
+					border-bottom: 1px solid $colorFrame
+					cursor: pointer
+					&::after
+						content: url('../img/reset_passwor.png')
+						position: absolute
+						right: 15px
+						top: 50%
+						transform: translateY(-30%)
+				&--modal
+					position: fixed
+					z-index: 100
+					top: 50%
+					left: 50%
+					transform: translate(-50%, -80%) scale(.9)
+					max-width: 95%
+					box-shadow: 0 10px 30px rgba(#000, .2)
+					background-color: #fff
+					border-radius: 4px
+					transition: all .18s ease-in-out
+					visibility: hidden
+					opacity: 0
+					&.show
+						transform: translate(-50%, -50%) scale(1)
+						opacity: 1
+						visibility: visible
+				&--backdrop
+					position: fixed
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					background-color: rgba(#000, .6)
+					z-index: 99
+					&.hidden
+						display: none
+				&--popup
+					padding: 33px 30px 20px 30px
+				&--ttl
+					font-size: 24px
+					color: $colorBlack
+					font-weight: 600
+					margin-bottom: 25px
+				&--ctrl
+					position: relative
+					margin-bottom: 10px
+					&:last-child
+						margin-bottom: 0
+				&--fld
+					outline: none
+					width: 100%
+					padding: 30px 55px 10px 20px
+					border-radius: 10px
+					background-color: #fff
+					font-size: 16px
+					color: $colorBlack
+					border: 1px solid $colorFrame
+					&:focus + label,
+					&:valid + label
+						font-size: 12px 
+						color: #BFBFBF
+						top: 16px 
+						left: 10px 
+						background: $colorBg2 
+						padding-left: 10px
+					&:focus,
+					&:valid
+						padding: 30px 55px 10px 20px
+				&--label
+					transition: .3s
+					position: absolute
+					left: 20px
+					top: 50%
+					transform: translateY(-50%)
+					color: #BFBFBF
+					font-size: 16px
+					pointer-events: none
+				&--eye
+					position: absolute
+					right: 25px
+					top: 50%
+					transform: translateY(-37%)
+					cursor: pointer
+					&::after
+						content: url('../img/show_eye.png')
+					&.hide
+						&::after
+							content: url('../img/hide_eye.png')
+				&--error
+					color: red
+					visibility: hidden
+					position: absolute
+					left: 0
+					top: 100%
+					&.error
+						visibility: visible
+						transition: .3s
+				&--buttons
+					margin-top: 30px
+					display: flex
+					justify-content: flex-end
+				&--cencel,
+				&--save
+					padding: 15px 50px
+					font-size: 16px
+					border-radius: 10px
+					&.active
+						color: $colorBg2
+						background-color: $colorSite
+				&--cencel
+					background-color: $colorBg2
+					border: 1px solid $colorFrame
+				&--save
+					margin-left: 40px
+					background-color: $colorButton
+				&--cross
+					position: absolute
+					top: 0
+					right: 15px
+					font-size: 35px
+					cursor: pointer
+			&-notifications
+				border: 1px solid $colorFrame
+				border-radius: 10px
+				color: $colorDark
+				overflow: hidden
+				&--title
+					font-size: 16px
+					font-weight: 500
+					background-color: $colorBg1
+					padding: 15px 20px
+				&--accordeon
+					padding: 20px
+				&--state
+					&:first-child
+						padding-bottom: 30px
+						border-bottom: 1px solid $colorFrame
+					&:last-child
+						margin-top: 30px
+				&--headline
+					position: relative
+					display: block
+					font-size: 16px
+					user-select: none
+					color: $colorBlack
+					cursor: pointer
+					&::after
+						content: url('../img/arrow.png')
+						position: absolute
+						right: 0
+						top: 0
+						transition: .2s linear
+					&.revorse::after
+						transition: .2s linear
+						transform: rotate(180deg)
+					&:hover
+						color: $colorDark
+				&--hide
+					margin-top: 45px
+					display: none
+					animation: softness .3s linear
+					&.show
+						display: block
+				&--checkboxes
+					display: flex
+					align-items: center
+					justify-content: space-between
+					margin-bottom: 15px
+					&:last-child
+						margin-bottom: 0
+				&--switch
+					position: relative 
+					display: inline-block 
+					width: 50px 
+					height: 30px
+				&--checkbox
+					opacity: 0 
+					width: 0 
+					height: 0 
+					z-index: -1
+					&:checked
+						& + span 
+							background-color: $colorGreen
+							&::before 
+								background-position: center center
+								background-image: url('../img/ckecked.png')
+								transform: translateX(18px) 
+								background-color: $colorBg2
+				&--slide
+					position: absolute 
+					top: 0 
+					bottom: 0 
+					left: 0 
+					right: 0 
+					background-color: #EFEFEF
+					cursor: pointer 
+					border-radius: 34px 
+					transition: 0.4s 
+					&::before 
+						content: '' 
+						position: absolute 
+						left: 3px 
+						top: 2px
+						height: 26px 
+						width: 26px 
+						background-color: #fff
+						background-image: url('../img/off.png')
+						background-position: center center
+						background-repeat: no-repeat
+						border-radius: 50% 
+						transition: 0.4s
+				&--text
+					user-select: none
+					color: $colorBlack
+					font-size: 16px
+					font-weight: 400
+					
+
+@keyframes softness
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+	
+
+[data-hint] 
+	position: relative 
+	cursor: help
+[data-hint]::after 
+	opacity: 0 
+	z-index: -1
+	width: max-content 
+	color: $colorBg2
+	background-color: rgba(0,0,0,.7) 
+	border-radius: 6px 
+	padding: 10px 
+	content: attr(data-hint) 
+	font-size: 12px 
+	font-weight: 400 
+	line-height: 1em 
+	position: absolute 
+	top: -5px 
+	left: 50% 
+	transform: translate(-50%, -100%) 
+	pointer-events: none 
+	z-index: 22
+	transition: opacity 0.2s 
+[data-hint]:hover 
+	&::after 
+		opacity: 1 
+
+.hint-right 
+	&::after 
+		top: 50% 
+		left: auto 
+		right: -15px 
+		transform: translate(100%, -50%)
+	&::before
+		content: url('../img/wop.png')
+		position: relative
+		top: 3px
+		left: 8px
+
+
+
+
+@media screen and ( max-width: 768px )
+	.page-profile
+		padding-left: 0
+	.page-profile-wrapper
+		margin-top: 0
+	.page-profile-title
+		text-align: center
+	.page-profile-wrapper__forms
+		flex-direction: column
+	.page-profile-wrapper__forms-left
+		max-width: unset
+	.page-profile-wrapper__forms-personal--buttons
+		flex-direction: column-reverse
+		margin: 0 0 20px 0
+	.page-profile-wrapper__forms-personal--save
+		margin-left: 0
+		margin-bottom: 15px
+	.page-profile-wrapper__forms-right
+		margin-left: 0
+	.page-profile-wrapper__forms-personal--title
+		background-color: transparent
+		font-weight: 600
+	.page-profile-wrapper__forms-personal--fields
+		padding: 0
+	.page-profile-wrapper__forms-personal
+		border: none
+	.page-profile-wrapper__forms-personal--title
+		padding: 15px 20px 25px 0
+		color: $colorBlack
+	.page-profile-wrapper__forms-personal--sex
+		margin: 20px 0
+	.page-profile-wrapper__forms-security--title
+		background-color: transparent
+		padding: 15px 20px 15px 0
+		color: $colorBlack
+		font-weight: 600
+	.page-profile-wrapper__forms-security
+		border: none
+	.page-profile-wrapper__forms-security--change-password
+		margin: 0
+	.page-profile-wrapper__forms-notifications
+		border: none
+	.page-profile-wrapper__forms-notifications--title
+		padding: 15px 20px 25px 0
+		color: $colorBlack
+		font-weight: 600
+		background-color: transparent
+	.page-profile-wrapper__forms-notifications--accordeon
+		padding: 0
+	
+@media screen and (max-width: 479px) 
+	.page-profile-wrapper__forms-security--modal
+		min-width: 95%
+	.page-profile-wrapper__forms-security--buttons
+		flex-direction: column-reverse
+	.page-profile-wrapper__forms-security--save
+		margin-left: 0
+		margin-bottom: 10px
